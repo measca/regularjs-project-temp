@@ -1,0 +1,14 @@
+<template>
+	<button on-click="{ this.onClick() }">
+		ffv
+	</button>
+</template>
+
+<script>
+	// you can also export Component Constructor here
+	export default Regular.extend({
+		onClick() {
+			location.href = 'http://regularjs.github.io/guide/';
+		}
+	});
+</script>

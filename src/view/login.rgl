@@ -1,0 +1,41 @@
+<template>
+  <div class="login-box">
+    <div class="login-bg"></div>
+    <div class="login-margin-top">
+      <img src="../resource/logo.png" alt="logo" ref="logo" style="height: 300px;top: 100px">
+      <div class="login-body" ref="body" style="display: none;">
+        <div class="login-body-bg"></div>
+        <div class="login-form">
+          <h4 class="login-title">登录：</h4>
+          <p class="login-text">登录到H+后台主题UI框架</p>
+          <div class="input-icon left">
+            <i class="fa fa-fw fa-user tooltips"></i>
+            <input type="text" class="form-control" placeholder="请输入用户名">
+          </div>
+          <div class="input-icon left mt15">
+            <i class="fa fa-fw fa-unlock-alt tooltips"></i>
+            <input type="password" class="form-control" placeholder="请输入密码">
+          </div>
+          <button type="button" class="btn btn-success btn-block mt25">登录</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+<script>
+  import "./scss/login.scss";
+
+  export default {
+    events: {
+      $init() {
+        var self = this;
+        $(self.$refs.logo).delay(800).animate({
+          height: 120,
+          top: 0
+        }, 800, function() {
+          $(self.$refs.body).fadeIn(500);
+        });
+      }
+    }
+  }
+</script>

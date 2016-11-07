@@ -1,0 +1,50 @@
+<template>
+  <div class="modal-open" r-hide="!visible">
+    <div class="tq-modal" r-hide="!visible" on-click="{this.__ModalClick($event)}">
+      <div class="modal-dialog {size}">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" on-click="{visible = false}">×</button>
+            <h4 class="modal-title">{title}</h4>
+          </div>
+          {#include this.$body}
+        </div>
+      </div>
+    </div>
+    <div class="modal-backdrop in"></div>
+  </div>
+</template>
+<script>
+  import "./style.scss";
+
+  export default {
+    data: {
+      // ----------公开变量
+      visible: false,
+      static: false,
+      size: "",
+      title: "",
+      // ----------私有变量
+    },
+    events: {
+      $init() {
+        this.$watch("visible", (newVal)=> {
+          setTimeout(()=>{
+              let count = $(".tq-modal:visible").size();
+              if(count) {
+                  $("body").addClass("modal-open");
+              } else {
+                  $("body").removeClass("modal-open");
+              }
+          }, 0);
+        });
+      }
+    },
+    __ModalClick(e) {
+      e.stopPropagation();
+      if(!this.data.static){
+        this.visible = false;
+      }
+    }
+  }
+</script>

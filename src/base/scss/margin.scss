@@ -1,0 +1,45 @@
+$ms:(
+    "0": 0px,
+    "5": 4px,
+    "10": 8px,
+    "15": 12px,
+    "20": 16px,
+    "25": 20px,
+    "30": 24px,
+    "35": 28px,
+    "40": 32px,
+    "45": 36px,
+    "50": 40px);
+
+@each $key, $val in $ms {
+    .m#{$key}{
+        margin: $val !important;
+    }
+    .m#{$key}.n{
+        margin: $val * -1 !important;
+    }
+    .mb#{$key} {
+        margin-bottom: $val !important;
+    }
+    .mb#{$key}.n,{
+        margin-bottom: $val * -1 !important;
+    }
+    .mt#{$key} {
+        margin-top: $val !important;
+    }
+    .mt#{$key}.n,{
+        margin-top: $val * -1 !important;
+    }
+    .ml#{$key} {
+        margin-left: $val !important;
+    }
+    .ml#{$key}.n,{
+        margin-left: $val * -1 !important;
+    }
+    .mr#{$key} {
+        margin-right: $val !important;
+    }
+    .mr#{$key}.n,{
+        margin-right: $val * -1 !important;
+    }
+}

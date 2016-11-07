@@ -1,0 +1,16 @@
+@import "./scss/btn.scss";
+@import "./scss/form.scss";
+@import "./scss/margin.scss";
+@import "./scss/padding.scss";
+@import "./scss/input-group.scss";
+@import "./scss/text.scss";
+@import "./scss/breadcrumbs.scss";
+@import "./scss/reset.scss";
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f3f4;
+  font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
