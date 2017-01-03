@@ -29,16 +29,16 @@ var routerConfig = path.resolve(srcDir, 'base/routerConfig.js')
 module.exports = (debug) => {
   // 获取所有需要打包的JS文件
   var entries = {}
-  var cssLoader
-  var sassLoader
+  // var cssLoader
+  // var sassLoader
   // 自动生成入口文件，入口js名必须和入口文件名相同
 
   var plugins = [new HtmlWebpackPlugin({
     template: 'html!' + path.resolve(__dirname, '../src/template/template.html'),
     filename: "index.html",
-    // chunksSortMode: "dependency",
+    chunksSortMode: "dependency",
     inject: 'body',
-    chunks: ['vender', 'compatibleIE', 'baseResource']
+    chunks: ['compatibleIE', 'vender', 'baseResource']
   })];
 
   // 没有真正引用也会加载到runtime，如果没安装这些模块会导致报错，有点坑
@@ -148,7 +148,7 @@ module.exports = (debug) => {
     },
     plugins: [
       new CommonsChunkPlugin({
-        names: ['baseResource', 'vender']
+        names: ['baseResource', 'vender', 'compatibleIE']
       })
     ].concat(plugins),
 
