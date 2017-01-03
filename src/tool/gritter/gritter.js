@@ -413,6 +413,6 @@ class Box{
     }
 }
 
-export default (setting, title, time) => {
+module.exports = (setting, title, time) => {
 	return new Box(setting, title, time);
 }

@@ -28,7 +28,7 @@
 <script>
   import "./style.scss";
 
-  export default {
+  module.exports = {
     data: {
       // ----------公开变量
       perPages: 10, // 每页包含多少条目

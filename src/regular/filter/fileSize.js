@@ -12,8 +12,8 @@ var fileSize = (value) => {
   }
 }
 
-export default fileSize;
+module.exports = fileSize;
 
-export var install = (Componenet) => {
+exports.install = (Componenet) => {
   Componenet.filter("fileSize", fileSize);
 }

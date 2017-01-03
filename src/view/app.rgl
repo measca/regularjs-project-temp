@@ -93,10 +93,11 @@
 		</div>
 	</div>
 </template>
-
 <script>
 	import "./scss/app.scss";
 
 	export default {
+		events: {
+		}
 	}
 </script>

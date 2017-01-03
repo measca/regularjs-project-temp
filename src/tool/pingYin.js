@@ -417,7 +417,7 @@ function a(e) {
     }
 }
 
-export default function (f) {
+module.exports = function (f) {
     var e = f.length;
     var l = "";
     var k = new RegExp("[a-zA-Z0-9- ]");

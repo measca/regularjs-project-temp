@@ -1,3 +1,4 @@
+
 import "../lib/font-awesome/css/font-awesome.css";
 
 import {install as fileSize} from "../regular/filter/fileSize";

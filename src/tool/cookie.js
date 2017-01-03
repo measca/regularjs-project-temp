@@ -86,4 +86,4 @@ function Cookie(options) {
     }
 }
 
-export default new Cookie();
+module.exports = new Cookie();

@@ -67,7 +67,7 @@
         }, 500);
     }
 
-    export default {
+    module.exports = {
         events: {
             $init() {
                 this.reset()

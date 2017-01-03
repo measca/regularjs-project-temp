@@ -186,4 +186,4 @@ if (Object.prototype.toString.call(window.JSON) === "[object JSON]") {
     };
 }
 
-export default JSON;
+module.exports = JSON;

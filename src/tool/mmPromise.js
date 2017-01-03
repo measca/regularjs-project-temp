@@ -211,4 +211,4 @@ if (/native code/.test(nativePromise)) {
     }
 }
 
-export default (nativePromise || msPromise)
+module.exports = (nativePromise || msPromise)

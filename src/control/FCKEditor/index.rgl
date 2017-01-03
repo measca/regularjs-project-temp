@@ -13,7 +13,7 @@
 
   import "../../lib/wangEditor/css/wangEditor.css";
 
-  export default {
+  module.exports = {
     events: {
       $init() {
         var self = this;

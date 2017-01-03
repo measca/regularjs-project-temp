@@ -102,7 +102,7 @@ function time(context, time, callback, title) {
   }, 1000);
 }
 
-export default {
+module.exports = {
   show(context, yesCallback, noCallback, title) {
     show(context, yesCallback, noCallback, title);
   },

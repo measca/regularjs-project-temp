@@ -185,4 +185,4 @@ try {
     store.disabled = true
 }
 
-export default store;
+module.exports = store;

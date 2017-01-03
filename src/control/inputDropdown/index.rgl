@@ -20,7 +20,7 @@
     if(val) successCallback(["你母鸡我干嘛?", "母鸡", "确实母鸡", "对了吧"]);
   }
 
-  export default {
+  module.exports = {
     data: {
       // ----------公开变量
       ajaxUrl: "", // 请求链接

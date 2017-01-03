@@ -36,9 +36,9 @@ module.exports = (debug) => {
   var plugins = [new HtmlWebpackPlugin({
     template: 'html!' + path.resolve(__dirname, '../src/template/template.html'),
     filename: "index.html",
-    chunksSortMode: "dependency",
+    // chunksSortMode: "dependency",
     inject: 'body',
-    chunks: ['compatibleIE', 'vender', 'baseResource']
+    chunks: ['vender', 'compatibleIE', 'baseResource']
   })];
 
   // 没有真正引用也会加载到runtime，如果没安装这些模块会导致报错，有点坑
@@ -77,27 +77,26 @@ module.exports = (debug) => {
     plugins.push(
       extractCSS,
       new UglifyJsPlugin({
+        mangle: false,
         compress: {
-          warnings: false
+          warnings: false,
+          properties: false,
+          screw_ie8: false
         },
         output: {
-          comments: false
-        },
-        mangle: {
-          except: ['$', 'exports', 'require']
+          beautify: false,
+          keep_quoted_props: true
         }
       }),
       new webpack.optimize.DedupePlugin(),
       new webpack.NoErrorsPlugin()
     )
-
-    plugins.push(new UglifyJsPlugin())
   }
 
   let config = {
     entry: Object.assign(entries, {
-      "compatibleIE": ["es5-shim/es5-shim",'es5-shim/es5-sham'], // 兼容IE8
       'vender': ['jquery', 'regularjs'],
+      "compatibleIE": ["es5-shim/es5-shim.js", "es5-shim/es5-sham.js"], // 兼容IE8
       "baseResource": [baseController, routerConfig, baseStyle]
     }),
     output: {
@@ -142,11 +141,14 @@ module.exports = (debug) => {
     },
     babel: {
       presets: ['es2015', 'stage-0'],
-      plugins: ['transform-runtime']
+      plugins: [
+        'transform-es3-member-expression-literals',
+        'transform-es3-property-literals'
+      ]
     },
     plugins: [
       new CommonsChunkPlugin({
-        names: ['baseResource', 'vender', 'compatibleIE']
+        names: ['baseResource', 'vender']
       })
     ].concat(plugins),
 

@@ -177,4 +177,4 @@ var restate = function (option) {
   return stateman;
 }
 
-export default restate;
+module.exports = restate;

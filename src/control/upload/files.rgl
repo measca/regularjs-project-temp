@@ -59,7 +59,7 @@
     }
   };
 
-  export default {
+  module.exports = {
     data: {
       // ----------公开变量
       url: "",

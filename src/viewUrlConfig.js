@@ -1,6 +1,6 @@
 export var index = "login";
 
-export default {
+module.exports = {
   "login": {
     component(next) {
       require(["./view/login.rgl"], function(Login) {
@@ -20,5 +20,5 @@ export default {
     config: {
       title: "测试应用"
     }
-  },
+  }
 };

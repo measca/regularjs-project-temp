@@ -196,7 +196,7 @@
     return mouthArr;
   }
 
-  export default {
+  module.exports = {
     config(data) {
       for(var i = 0; i < 60; i++) {
         if(i < 12) data.__MonthArr.push(i + 1);

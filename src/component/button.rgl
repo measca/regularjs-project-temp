@@ -6,7 +6,7 @@
 
 <script>
 	// you can also export Component Constructor here
-	export default Regular.extend({
+	module.exports = Regular.extend({
 		onClick() {
 			location.href = 'http://regularjs.github.io/guide/';
 		}

@@ -162,7 +162,7 @@ function showPrevious () {
   }
 }
 
-export default function(images, index) {
+module.exports = function(images, index) {
   index = isNaN(index) ? 0 : index
 
   images = images || []

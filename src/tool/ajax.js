@@ -181,6 +181,6 @@ function Ajax (baseAjaxAction, shareData) {
   }
 }
 
-export default () => {
+module.exports = () => {
   return new Ajax()
 }
